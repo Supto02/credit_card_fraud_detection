@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Fraud Detection</h1>
+        <form action="/predict" method="post">
+            <label for="v1">V1:</label>
+            <input type="text" id="v1" name="v1" required><br><br>
+
+            <label for="v2">V2:</label>
+            <input type="text" id="v2" name="v2" required><br><br>
+
+            <!-- Add more fields as per your model's input features -->
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
